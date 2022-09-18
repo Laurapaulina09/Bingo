@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="Description" content="Put your description here.">
+  <base href="/">
+  <script src="https://code.responsivevoice.org/responsivevoice.js?key=SlnMbkvV"></script>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #ededed;
+    }
+  </style>
+  <title>bin-go</title>
+</head>
+
+<body>
+  <bin-go id="bingo"></bin-go>
+  <script type="module" src="./out-tsc/src/bin-go.js"></script>
+  <script>
+    document.getElementById('bingo').addEventListener('hablar-bingo', (e)=>{
+      let n = e.detail.numero
+      mensaje = ""
+      if(n <= 15){
+        mensaje = "B, "+n
+      }else if( n <= 30){
+        mensaje = "I, "+n
+      }else if( n <= 45){
+        mensaje = "N, "+n
+      }else if( n <= 60){
+        mensaje = "G, "+n
+      }else{
+        mensaje = "O, "+n
+      }
+
+      responsiveVoice.speak(mensaje, "Spanish Female");
+      setTimeout(()=>{
+        responsiveVoice.speak(mensaje, "Spanish Female");
+      },4000)
+    })
+  </script>
+</body>
+
+</html>

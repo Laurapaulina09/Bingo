@@ -22,28 +22,6 @@
 <body>
   <bin-go id="bingo"></bin-go>
   <script type="module" src="./out-tsc/src/bin-go.js"></script>
-  <script>
-    document.getElementById('bingo').addEventListener('hablar-bingo', (e)=>{
-      let n = e.detail.numero
-      mensaje = ""
-      if(n <= 15){
-        mensaje = "B, "+n
-      }else if( n <= 30){
-        mensaje = "I, "+n
-      }else if( n <= 45){
-        mensaje = "N, "+n
-      }else if( n <= 60){
-        mensaje = "G, "+n
-      }else{
-        mensaje = "O, "+n
-      }
-
-      responsiveVoice.speak(mensaje, "Spanish Female");
-      setTimeout(()=>{
-        responsiveVoice.speak(mensaje, "Spanish Female");
-      },4000)
-    })
-  </script>
 </body>
 
 </html>

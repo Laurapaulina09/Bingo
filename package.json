@@ -11,7 +11,8 @@
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\""
   },
   "dependencies": {
-    "lit": "^2.0.2"
+    "lit": "^2.0.2",
+    "socket.io-client": "^4.6.1"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.4.17",

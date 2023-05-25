@@ -3,10 +3,11 @@ import { customElement, property } from 'lit/decorators.js';
 //@ts-ignore
 import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
 import { icons } from '../utils/icons';
+import { socket } from '../env/enviroment';
 
 @customElement('tabla-bingo')
 export class TablaBingo extends LitElement {
-  socket = io("http://localhost:3001");
+  socket = io(socket);
   static styles = css`
   .bingo-table {
     display: grid;

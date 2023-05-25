@@ -1,8 +1,9 @@
-const url = "http://localhost:3000";
+import { api } from "../env/enviroment";
+
 
 export const newBingo = async () => {
   try {
-    const response = await fetch(`${url}/newBingo`, {
+    const response = await fetch(`${api}/newBingo`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -19,7 +20,7 @@ export const newBingo = async () => {
 
 export const getTabla = async (code:string) => {
   try {
-    const response = await fetch(`${url}/tabla/${code}`, {
+    const response = await fetch(`${api}/tabla/${code}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -38,7 +39,7 @@ export const getTabla = async (code:string) => {
 
 export const asignarNumero = async (code:string, numero:number) => {
   try {
-    const response = await fetch(`${url}/bingo/${code}`, {
+    const response = await fetch(`${api}/bingo/${code}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
